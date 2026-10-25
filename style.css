@@ -1,63 +1,107 @@
-
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
-    background-color: lightgray;
+    background-color: #eaf0f8;
     margin: 0;
+    min-height: 100vh;
+    color: #333;
 }
-
 .encabezado {
     display: flex;
     align-items: center;
-    padding: 10px;
-    background-color: white;
+    gap: 15px;
+    padding: 20px 30px;
+    background-color: #eaf0f8;
+    border-bottom: 2px solid #285a9e;
 }
-
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
 }
-
 .nombre-colegio {
-    color: darkblue;
-    font-size: 20px;
-    margin-left: 10px;
+    color: #285a9e;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
 }
-
 .contenido {
-    text-align: center;
-    padding: 50px 20px;
+    min-height: calc(100vh - 118px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 50px;
 }
-
 .contenedor {
-    width: 300px;
-    margin: auto;
+    background-color: transparent;
+    width: 100%;
+    max-width: 420px;
+    padding: 25px;
+    border-radius: 0;
+    box-shadow: none;
 }
-
 h1 {
-    color: darkblue;
+    text-align: center;
+    color: #285a9e;
+    font-size: 30px;
 }
-
+.contenedor p {
+    text-align: center;
+    color: #555;
+    line-height: 1.5;
+}
 label {
     display: block;
-    margin-top: 15px;
+    margin-top: 20px;
+    font-size: 17px;
 }
-
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 17px;
+    margin-top: 7px;
+    border: 1px solid #9eafc4;
+    border-radius: 5px;
+    font-size: 17px;
+    background-color: white;
 }
-
 button {
     width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: blue;
+    padding: 14px;
+    margin-top: 22px;
+    background-color: #285a9e;
     color: white;
     border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
 }
-
+button:hover {
+    background-color: #1c4275;
+}
+button:disabled,
+input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 #mensaje {
     color: red;
+    font-size: 15px;
+    margin-top: 15px;
+}
+@media (max-width: 500px) {
+    .encabezado {
+        padding: 15px;
+    }
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    .nombre-colegio {
+        font-size: 18px;
+    }
+    .contenedor {
+        padding: 15px;
+    }
 }
