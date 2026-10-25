@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es una página de login realizada con HTML, CSS y JavaScript. Permite ingresar con diferentes usuarios y redirige a una página según los datos ingresados. Si los datos son incorrectos, muestra un mensaje de error. También tiene un tercer usuario y un bloqueo temporal después de varios intentos fallidos.
+Este proyecto es una página de login realizada con HTML, CSS y JavaScript. Permite ingresar con diferentes usuarios y redirige a una página según los datos ingresados. Si los datos son incorrectos, muestra un mensaje de error. También tiene un tercer usuario de invitado.
 
 ## Usuarios de prueba
 
