@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Instituto Superior Santa María</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="encabezado">
+        <img src="logo.png" alt="Logo del colegio" class="logo">
+        <p class="nombre-colegio">
+            Instituto Superior Santa María
+        </p>
+    </header>
+    <main class="contenido">
+        <div class="contenedor">
+            <h1>Iniciar sesión</h1>
+            <p>Ingresá tu usuario y contraseña</p>
+            <form id="formulario">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" placeholder="Tu usuario" required>
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" placeholder="Tu contraseña" required>
+                <button type="submit">Ingresar</button>
+                <p id="mensaje"></p>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
