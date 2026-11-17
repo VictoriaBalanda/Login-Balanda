@@ -14,7 +14,8 @@ El usuario invitado tiene la contraseña 1234 y accede a la página de invitado.
 
 ## Captura de pantalla
 
-<img width="1920" height="922" alt="Captura de pantalla 2026-10-25 141443" src="https://github.com/user-attachments/assets/09936b2f-7a20-4906-b538-3791be10912a" />
+<img width="1920" height="924" alt="imagen" src="https://github.com/user-attachments/assets/7b6a5343-0dd0-47dc-8094-79f58b3fe885" />
+
 
 ## GitHub Pages
 
