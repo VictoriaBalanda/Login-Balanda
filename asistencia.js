@@ -13,9 +13,16 @@ let alumnos = [
 let asistencias = JSON.parse(localStorage.getItem("asistencias")) || {};
 let lista = document.getElementById("listaAlumnos");
 let mensaje = document.getElementById("mensajeAsistencia");
+function cerrarSesion() {
+    localStorage.removeItem("usuarioActivo");
+    window.location.href = "index.html";
+}
 function guardarAsistencia() {
     localStorage.setItem("asistencias", JSON.stringify(asistencias));
     mensaje.textContent = "Asistencia guardada correctamente.";
+    setTimeout(() => {
+        mensaje.textContent = "";
+    }, 2000);
 }
 function mostrarAlumnos() {
     lista.innerHTML = "";
@@ -25,25 +32,25 @@ function mostrarAlumnos() {
         }
         let fila = document.createElement("div");
         fila.className = "fila-alumno";
-        let nombre = document.createElement("p");
+        let nombre = document.createElement("span");
+        nombre.className = "nombre-alumno";
         nombre.textContent = alumno;
         let opciones = document.createElement("div");
         opciones.className = "opciones-asistencia";
+        let labelPresente = document.createElement("label");
         let presente = document.createElement("input");
         presente.type = "checkbox";
         presente.className = "checkbox-asistencia";
         presente.checked = asistencias[alumno] === "Presente";
-        let textoPresente = document.createElement("label");
-        textoPresente.textContent = "Presente";
+        labelPresente.appendChild(presente);
+        labelPresente.appendChild(document.createTextNode(" Presente"));
+        let labelAusente = document.createElement("label");
         let ausente = document.createElement("input");
         ausente.type = "checkbox";
         ausente.className = "checkbox-asistencia";
         ausente.checked = asistencias[alumno] === "Ausente";
-        let textoAusente = document.createElement("label");
-        textoAusente.textContent = "Ausente";
-        let estado = document.createElement("p");
-        estado.className = "estado-alumno";
-        estado.textContent = "Estado: " + asistencias[alumno];
+        labelAusente.appendChild(ausente);
+        labelAusente.appendChild(document.createTextNode(" Ausente"));
         presente.onchange = function() {
             if (presente.checked) {
                 ausente.checked = false;
@@ -51,7 +58,6 @@ function mostrarAlumnos() {
             } else {
                 asistencias[alumno] = "Sin marcar";
             }
-            estado.textContent = "Estado: " + asistencias[alumno];
             guardarAsistencia();
         };
         ausente.onchange = function() {
@@ -61,20 +67,12 @@ function mostrarAlumnos() {
             } else {
                 asistencias[alumno] = "Sin marcar";
             }
-            estado.textContent = "Estado: " + asistencias[alumno];
             guardarAsistencia();
         };
-        let opcionPresente = document.createElement("div");
-        opcionPresente.appendChild(presente);
-        opcionPresente.appendChild(textoPresente);
-        let opcionAusente = document.createElement("div");
-        opcionAusente.appendChild(ausente);
-        opcionAusente.appendChild(textoAusente);
-        opciones.appendChild(opcionPresente);
-        opciones.appendChild(opcionAusente);
+        opciones.appendChild(labelPresente);
+        opciones.appendChild(labelAusente);
         fila.appendChild(nombre);
         fila.appendChild(opciones);
-        fila.appendChild(estado);
         lista.appendChild(fila);
     });
 }
